@@ -1,0 +1,5 @@
+POST http://localhost/suggestions
+Content-Type: application/x-www-form-urlencoded
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTIxMDY1MjEsInVzZXJuYW1lIjoicG91cnlhcGIifQ.blfLCgOdl7nqg2PCzCs1ECjBpKETS6AZGvB9D5qsRHs
+
+text=sometext

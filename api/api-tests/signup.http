@@ -1,0 +1,5 @@
+POST http://localhost/signup
+Content-Type: application/x-www-form-urlencoded
+
+username=pouryapb
+&password=password
