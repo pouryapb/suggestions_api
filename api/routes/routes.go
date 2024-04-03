@@ -13,11 +13,8 @@ func RegisterRoutes(server *gin.Engine) {
 	server.POST("/signup", signup)
 	server.POST("/login", login)
 
-	suggestions := server.Group("/suggestions")
-	suggestions.Use(middlewares.Authenticate)
-
-	suggestions.POST("/", createSuggestion)
-	suggestions.GET("/", getSuggestions)
+	server.POST("/suggestions", middlewares.Authenticate, createSuggestion)
+	server.GET("/suggestions", getSuggestions)
 }
 
 func getStatus(ctx *gin.Context) {

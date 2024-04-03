@@ -4,7 +4,7 @@ import "suggestions.api/db"
 
 type Suggestion struct {
 	Id       int64  `json:"-"`
-	Username string `json:"username"`
+	Username string `json:"user"`
 	Text     string `binding:"required" form:"text" json:"text"`
 }
 

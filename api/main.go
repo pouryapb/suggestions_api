@@ -12,5 +12,5 @@ func main() {
 
 	routes.RegisterRoutes(server)
 
-	server.Run(":80")
+	server.Run("0.0.0.0:80")
 }

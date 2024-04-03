@@ -36,5 +36,9 @@ func getSuggestions(ctx *gin.Context) {
 		return
 	}
 
+	if len(suggestions) == 0 {
+		suggestions = make([]models.Suggestion, 0)
+	}
+
 	ctx.JSON(http.StatusOK, suggestions)
 }

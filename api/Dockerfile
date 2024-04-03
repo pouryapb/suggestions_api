@@ -1,9 +1,14 @@
 FROM registry.gitlab.com/qio/standard/golang:1.17
 
+ENV GIN_MODE=release
+
 WORKDIR /api
 
-COPY . .
-RUN go mod tidy
+COPY go.mod go.sum ./
+RUN go mod download
 
-RUN chmod +x /api/runner.sh
-ENTRYPOINT /api/runner.sh
+COPY . .
+RUN go build
+
+EXPOSE 80
+CMD [ "./suggestions.api" ]

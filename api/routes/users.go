@@ -21,7 +21,7 @@ func signup(ctx *gin.Context) {
 	err = user.Save()
 	if err != nil {
 		// I know this is not a good message here but I'm not gonna try THAT hard for this :))
-		ctx.JSON(http.StatusInternalServerError, gin.H{"ok": false, "error": "user already exists"})
+		ctx.JSON(http.StatusBadRequest, gin.H{"ok": false, "error": "user already exists"})
 		return
 	}
 
@@ -46,7 +46,7 @@ func login(ctx *gin.Context) {
 	err = user.ValidateCredentials()
 
 	if err != nil {
-		ctx.JSON(http.StatusUnauthorized, gin.H{"ok": false, "error": "invalid username or password"})
+		ctx.JSON(http.StatusBadRequest, gin.H{"ok": false, "error": "invalid username or password"})
 		return
 	}
 
